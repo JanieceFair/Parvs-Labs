@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Parvs Labs</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="Midterm.css">
+</head>
+<body>
+<header>
+<nav>
+<div class="logo">Parvs Labs</div>
+<input type="text" placeholder="search pcs.." class="search-bar">
+  <div class="hamburger-menu">
+    <div class="hamburger-icon">&#9776;</div>
+
+    <ul class="hamburger-dropdown">
+	<li><a href="index.html">Home</a></li>
+      <li><a href="catalog.html">Catalog</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="cart.html">Shopping Cart</a></li>
+    </ul>
+  </div>
+</nav>
+
+</header>
+<div id="media-mixer-slideshow" class="slideshow-container">
+<div class="slide active">
+<img src="IMG_3886.JPEG" alt="blue">
+</div>
+<div class="slide">
+<img src="IMG_3887.JPEG" alt="blue">
+</div>
+<div class="slide">
+<img src="IMG_3885.JPEG" alt="blue">
+</div>
+<div class="slide">
+<video id="slideshow-video" controls muted poster="thumbnail.jpg">
+<source src="IMG_3879.mov" type="video/mp4">
+</video>
+</div>
+<div class="slide">
+<img src="IMG_3877.JPEG" alt="blue">
+</div>
+<div class="slide">
+<img src="IMG_3873.JPEG" alt="blue">
+</div>
+<button class="nav-btn prev">❮</button>
+<button class="nav-btn next">❯</button>
+</div>
+<div class="product-info">
+<h1>ASUS PRIME B550</h1>
+<div class="price">$900</div>
+<p class="description">
+This computer is freshly assembled and ready for a new home, ideal for 1080p gaming with medium-high settings. Fully setup with windows 11 home so all you have to do is plug it in and download your games!
+</p>
+<h2>Technical Specifications</h2>
+<table class="specs-table">
+<tr>
+<th>CPU</th>
+<td>AMD RYZEN 5 5600X</td>
+</tr>
+<tr>
+<th>GPU</th>
+<td>NVIDIA RTX 3070</td>
+</tr>
+<tr>
+<th>RAM</th>
+<td>32GB DDR4 3200MT</td>
+</tr>
+<tr>
+<th>STORAGE</th>
+<td>1TB NVME M.2 SSD</td>
+</tr>
+<tr>
+<th>POWERSUPPLY</th>
+<td>750w 80+ Bronze</td>
+</tr>
+</table>
+<button class="btn-add-to-cart">Add to Cart</button>
+<h3>What's included with the sale?</h3>
+<p>PC tower</p>
+<p>Power cord</p> 
+<p>WIFI antenna</p>
+<p>extra screws/ hardware if applicable</p>
+
+<p>BENCHMARKS. ALL GAMES TESTED IN 1080p</p>
+
+<p>FPS</p>
+<p>PUBG high preset 170+</p>
+<p>Fortnite High preset 160+</p>
+<p>Arc raiders medium preset 120+</p>
+
+<h3>NOTES PLEASE READ</h3>
+<p>---------------------------------------------------------------------------------------------------------------</p>
+<p class="description">
+Things to know about this specific computer: the RGB is controllable via button on case, the PC has full wireless capabilities, the side glass is removed for pictures, built with new and used parts tested for 100% functionality.
+</p>
+</div>
+<footer class="site-footer">
+<div class="footer-content">
+        <div class="payment-icons">
+            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/visa.svg" alt="Visa">
+			    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/mastercard.svg" alt="Mastercard">
+            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/applepay.svg" alt="Apple Pay">
+			</div>
+
+<h4>2026, Parvs Labs- All Rights Reserved.</h4>
+<p>Website by Janiece Fair</p>
+</div>
+</footer>
+<script>
+function initMediaSlideshow(containerId) {
+  const container = document.getElementById(containerId);
+  if (!container) return;
+  const slides = container.querySelectorAll('.slide');
+  const video = container.querySelector('.slideshow-video');
+  const prevBtn = container.querySelector('.prev');
+  const nextBtn = container.querySelector('.next');
+  
+  let currentIndex = 0;
+
+  function showSlide(newIndex) {
+    slides[currentIndex].classList.remove('active');
+    if (newIndex >= slides.length) {
+      currentIndex = 0;
+    } else if (newIndex < 0) {
+      currentIndex = slides.length - 1;
+    } else {
+      currentIndex = newIndex;
+    }
+
+    slides[currentIndex].classList.add('active');
+    if (video) {
+      if (slides[currentIndex].contains(video)) {
+        video.play().catch(err => console.log("Playback interaction required:", err));
+      } else {
+        video.pause();
+      }
+    }
+  }
+  prevBtn.addEventListener('click', () => showSlide(currentIndex - 1));
+  nextBtn.addEventListener('click', () => showSlide(currentIndex + 1));
+}
+document.addEventListener("DOMContentLoaded", () => {
+  initMediaSlideshow("media-mixer-slideshow");
+});
+
+</script>
+</body>
+</html>

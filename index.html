@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Parvs Labs</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="Midterm.css">
+</head>
+<body>
+<header>
+<nav>
+<div class="logo">Parvs Labs</div>
+<input type="text" placeholder="search pcs.." class="search-bar">
+  <div class="hamburger-menu">
+    <div class="hamburger-icon">&#9776;</div>
+
+    <ul class="hamburger-dropdown">
+      <li><a href="catalog.html">Catalog</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="cart.html">Shopping Cart</a></li>
+    </ul>
+  </div>
+</nav>
+
+</header>
+    <h1>High-tech Specs.</h1>
+    <p>Explore well built computers</p>
+<div class="slideshow-container">
+ <div class="mySlides fade">
+   <img src="IMG_3886.JPEG" style="width:100%">
+ </div>
+ <div class="mySlides fade">
+   <img src="IMG_3887.JPEG" style="width:100%">
+ </div>
+ <div class="mySlides fade">
+   <img src="IMG_3885.JPEG" style="width:100%">
+ </div>
+</div>
+<div class="text-center-wrapper">
+    <a href="pc-detail.html" class="btn-active">View Latest</a>
+	</div>
+
+<h2>Shop All Builds</h2>
+<div class="slideshow-container">
+ <div class="mySlides-b fade">
+            <img src="IMG_3272.JPEG" style="width:100%">
+        </div>
+        <div class="mySlides-b fade">
+            <img src="IMG_3279.JPEG" style="width:100%">
+        </div>
+        <div class="mySlides-b fade">
+            <img src="IMG_3284.JPEG" style="width:100%">
+    </div>
+</div>
+<div class="text-center-wrapper">
+<a href="catalog.html" class="btn-active">View all Builds</a>
+</div>
+
+<h3>Reviews</h3>
+<p>What our customers have said!</p>
+<section class="review-container">
+  <h3>Leave a Review!</h3>
+
+  <form class="review-form">
+
+    <label for="review-name">Your Name</label>
+    <input type="text" id="review-name" name="review-name" required>
+
+    <label for="review-rating">Rating</label>
+    <select id="review-rating" name="review-rating" required>
+      <option value="">Select rating...</option>
+      <option value="5">★★★★★ — Excellent</option>
+      <option value="4">★★★★☆ — Great</option>
+      <option value="3">★★★☆☆ — Good</option>
+      <option value="2">★★☆☆☆ — Fair</option>
+      <option value="1">★☆☆☆☆ — Poor</option>
+    </select>
+
+    <label for="review-text">Your Review</label>
+    <textarea id="review-text" name="review-text" rows="5" placeholder="Share your experience..." required></textarea>
+
+    <button type="submit" class="btn-active">Submit Review</button>
+  </form>
+</section>
+<div class="text-center-wrapper">
+<button class="btn-active">Contact Us!</button>
+</div>
+
+<footer class="site-footer">
+<div class="footer-content">
+<h4>2026, Parvs Labs</h4>
+<p>Website by Janiece Fair</p>
+</div>
+</footer>
+<script>
+let slideIndexA = 0;
+showSlidesA();
+
+function showSlidesA() {
+    let slidesA = document.getElementsByClassName("mySlides");
+    
+    for (let i = 0; i < slidesA.length; i++) {
+        slidesA[i].style.display = "none";
+    }
+
+    slideIndexA++;
+    if (slideIndexA > slidesA.length) {
+        slideIndexA = 1;
+    }
+
+    slidesA[slideIndexA - 1].style.display = "block";
+    setTimeout(showSlidesA, 3000);
+}
+
+let slideIndexB = 0;
+showSlidesB();
+
+function showSlidesB() {
+    let slidesB = document.getElementsByClassName("mySlides-b");
+    
+    for (let i = 0; i < slidesB.length; i++) {
+        slidesB[i].style.display = "none";
+    }
+
+    slideIndexB++;
+    if (slideIndexB > slidesB.length) {
+        slideIndexB = 1;
+    }
+
+    slidesB[slideIndexB - 1].style.display = "block";
+    setTimeout(showSlidesB, 3000);
+}
+</script>
+
+</body>
+</html>
